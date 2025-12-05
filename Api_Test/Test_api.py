@@ -31,7 +31,7 @@ class TestPostUser:
         assert response.status_code == 201
 
         data = response.json()
-        assert isinstance (data,list)
+        assert isinstance (data,dict)
 
         assert data["name"] == new_user["name"], "El name no coincide"
         assert data["username"] == new_user["username"], "Userame no coincide"
@@ -49,4 +49,4 @@ class TestPatchUser:
         assert response.status_code == 200
 
         data=response.json()
-        assert data["email"] == updated_user["email"], "El email no coincide"
+        assert data["name"] == updated_user["name"], "El name no coincide"
