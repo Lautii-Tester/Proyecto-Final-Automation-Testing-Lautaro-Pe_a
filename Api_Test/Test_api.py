@@ -42,7 +42,7 @@ class TestPatchUser:
     @pytest.mark.patch
     def test_patch_response_code(self, URL_API):
         updated_user = {
-            "Name": "Bort"
+            "name": "Bort"
         }
         response = requests.patch(URL_API + "users/1", json=updated_user)
         print(response.status_code)
